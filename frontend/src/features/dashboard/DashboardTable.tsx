@@ -1,6 +1,18 @@
 import { projects } from './mockData';
 
 export function DashboardTable() {
+  // Simulated states (replace with real API later)
+  const isLoading = false;
+  const isError = false;
+
+  if (isLoading) {
+    return <p className="text-gray-500">Loading projects...</p>;
+  }
+
+  if (isError) {
+    return <p className="text-red-600">Failed to load projects.</p>;
+  }
+
   if (projects.length === 0) {
     return <p className="text-gray-500">No projects available.</p>;
   }
